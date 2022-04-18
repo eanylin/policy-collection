@@ -13,7 +13,7 @@ metadata:
     policy.open-cluster-management.io/categories: CA Security Assessment and Authorization
     policy.open-cluster-management.io/controls: CA-2 Security Assessments, CA-7 Continuous Monitoring
 spec:
-  remediationAction: inform
+  remediationAction: enforce
   disabled: false
   policy-templates:
     - objectDefinition:
@@ -22,7 +22,7 @@ spec:
         metadata:
           name: comp-operator-ns
         spec:
-          remediationAction: inform # will be overridden by remediationAction in parent policy
+          remediationAction: enforce # will be overridden by remediationAction in parent policy
           severity: high
           object-templates:
             - complianceType: musthave
@@ -37,7 +37,7 @@ spec:
         metadata:
           name: comp-operator-operator-group
         spec:
-          remediationAction: inform # will be overridden by remediationAction in parent policy
+          remediationAction: enforce # will be overridden by remediationAction in parent policy
           severity: high
           object-templates:
             - complianceType: musthave
@@ -56,7 +56,7 @@ spec:
         metadata:
           name: comp-operator-subscription
         spec:
-          remediationAction: inform  # will be overridden by remediationAction in parent policy
+          remediationAction: enforce  # will be overridden by remediationAction in parent policy
           severity: high
           object-templates:
             - complianceType: musthave
@@ -77,7 +77,7 @@ spec:
         metadata:
           name: comp-operator-status
         spec:
-          remediationAction: inform  # will be overridden by remediationAction in parent policy
+          remediationAction: enforce  # will be overridden by remediationAction in parent policy
           severity: high
           object-templates:
             - complianceType: musthave
@@ -114,4 +114,4 @@ spec:
       type: ManagedClusterConditionAvailable
   clusterSelector:
     matchExpressions:
-      - {key: vendor, operator: In, values: ["OpenShift"]}
+      - {key: environment, operator: In, values: ["dev"]}
