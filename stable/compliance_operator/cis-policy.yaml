@@ -36,7 +36,7 @@ spec:
                 settingsRef:
                   apiGroup: compliance.openshift.io/v1alpha1
                   kind: ScanSetting
-                  name: default
+                  name: default-auto-apply
     - objectDefinition: 
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
