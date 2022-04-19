@@ -43,7 +43,7 @@ spec:
         metadata:
           name: compliance-suite-cis
         spec:
-          remediationAction: enforce
+          remediationAction: inform
           severity: high
           object-templates:
             - complianceType: musthave # this template checks if scan has completed by checking the status field
@@ -61,7 +61,7 @@ spec:
         metadata:
           name: compliance-suite-cis-results
         spec:
-          remediationAction: enforce
+          remediationAction: inform
           severity: high
           object-templates:
             - complianceType: mustnothave # this template reports the results for scan suite: cis by looking at ComplianceCheckResult CRs
