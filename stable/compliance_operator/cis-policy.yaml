@@ -7,7 +7,7 @@ metadata:
     policy.open-cluster-management.io/categories: CM Configuration Management
     policy.open-cluster-management.io/controls: CM-6 Configuration Settings
 spec:
-  remediationAction: inform
+  remediationAction: enforce
   disabled: false
   policy-templates:
     - objectDefinition:
@@ -43,7 +43,7 @@ spec:
         metadata:
           name: compliance-suite-cis
         spec:
-          remediationAction: inform
+          remediationAction: enforce
           severity: high
           object-templates:
             - complianceType: musthave # this template checks if scan has completed by checking the status field
@@ -61,7 +61,7 @@ spec:
         metadata:
           name: compliance-suite-cis-results
         spec:
-          remediationAction: inform
+          remediationAction: enforce
           severity: high
           object-templates:
             - complianceType: mustnothave # this template reports the results for scan suite: cis by looking at ComplianceCheckResult CRs
