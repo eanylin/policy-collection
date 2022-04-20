@@ -32,12 +32,6 @@ spec:
                   name: cluster
                 spec:
                   identityProviders:
-                    - htpasswd:
-                        fileData:
-                          name: htpasswd-secret
-                        mappingMethod: claim
-                        name: htpasswd_provider
-                        type: HTPasswd
                     - mappingMethod: claim
                       name: keycloak
                       openID:
