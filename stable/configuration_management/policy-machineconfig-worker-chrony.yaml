@@ -28,7 +28,7 @@ spec:
                 metadata:
                   name: 50-worker-chrony
                   labels:
-                    node-role.kubernetes.io/worker:
+                    machineconfiguration.openshift.io/role: worker
                 spec:
                   config:
                     ignition:
