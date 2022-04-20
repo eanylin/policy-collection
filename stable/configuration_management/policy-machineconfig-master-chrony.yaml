@@ -28,7 +28,7 @@ spec:
                 metadata:
                   name: 50-master-chrony
                   labels:
-                    machineconfiguration.openshift.io/role: master
+                    node-role.kubernetes.io/master:
                 spec:
                   config:
                     ignition:
