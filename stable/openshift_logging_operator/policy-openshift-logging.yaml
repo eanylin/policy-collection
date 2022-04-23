@@ -69,25 +69,6 @@ spec:
                   name: cluster-logging
                   source: redhat-operators
                   sourceNamespace: openshift-marketplace
-    - objectDefinition:
-        apiVersion: policy.open-cluster-management.io/v1
-        kind: ConfigurationPolicy
-        metadata:
-          name: openshift-logging-operator-status
-        spec:
-          remediationAction: enforce
-          severity: high
-          object-templates:
-            - complianceType: musthave
-              objectDefinition:
-                apiVersion: operators.coreos.com/v1alpha1
-                kind: ClusterServiceVersion
-                metadata:
-                  namespace: openshift-logging
-                spec:
-                  displayName: Cluster Logging
-                status:
-                  phase: Succeeded
 ---
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
