@@ -1,7 +1,7 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
-  name: policy-oauth-config
+  name: policy-oauth-config-keycloak
   annotations:
     policy.open-cluster-management.io/standards: NIST SP 800-53
     policy.open-cluster-management.io/categories: CM Configuration Management
@@ -55,20 +55,20 @@ spec:
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
-  name: binding-policy-oauth-config
+  name: binding-policy-oauth-config-keycloak
 placementRef:
-  name: placement-policy-oauth-config
+  name: placement-policy-oauth-config-keycloak
   kind: PlacementRule
   apiGroup: apps.open-cluster-management.io
 subjects:
-- name: policy-oauth-config
+- name: policy-oauth-config-keycloak
   kind: Policy
   apiGroup: policy.open-cluster-management.io
 ---
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: placement-policy-oauth-config
+  name: placement-policy-oauth-config-keycloak
 spec:
   clusterConditions:
   - status: "True"
