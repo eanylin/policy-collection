@@ -69,6 +69,79 @@ spec:
                   name: cluster-logging
                   source: redhat-operators
                   sourceNamespace: openshift-marketplace
+    - objectDefinition:
+        apiVersion: policy.open-cluster-management.io/v1
+        kind: ConfigurationPolicy
+        metadata:
+          name: cluster-logging-instance
+        spec:
+          remediationAction: enforce
+          severity: high
+          object-templates:
+            - complianceType: musthave
+              objectDefinition:
+                apiVersion: logging.openshift.io/v1
+                kind: ClusterLogging
+                metadata:
+                  name: instance
+                  namespace: openshift-logging
+                spec:
+                  collection:
+                    logs:
+                      fluentd: {}
+                      type: fluentd
+                  managementState: Managed
+    - objectDefinition:
+        apiVersion: policy.open-cluster-management.io/v1
+        kind: ConfigurationPolicy
+        metadata:
+          name: external-elasticsearch-secret
+        spec:
+          remediationAction: enforce
+          severity: high
+          object-templates:
+            - complianceType: musthave
+              objectDefinition:
+                kind: Secret
+                apiVersion: v1
+                metadata:
+                  name: external-elasticsearch
+                  namespace: openshift-logging
+                data:
+                  password: MTA1czA5V0VpcVAwbk8wN29NeUcyTEMy
+                  username: ZWxhc3RpYw==
+                type: Opaque
+    - objectDefinition:
+        apiVersion: policy.open-cluster-management.io/v1
+        kind: ConfigurationPolicy
+        metadata:
+          name: cluster-log-forwarder
+        spec:
+          remediationAction: enforce
+          severity: high
+          object-templates:
+            - complianceType: musthave
+              objectDefinition:
+                kind: ClusterLogForwarder
+                apiVersion: logging.openshift.io/v1
+                metadata:
+                  name: instance
+                  namespace: openshift-logging
+                spec:
+                  outputs:
+                    - name: remote-elasticsearch
+                      type: elasticsearch
+                      url: 'https://elastic-https-elastic.apps.cluster-r7ft4.r7ft4.sandbox127.opentlc.com:443'
+                      secret:
+                        name: external-elasticsearch
+                  pipelines:
+                    - name: forward-to-remote
+                      inputRefs:
+                        - infrastructure
+                      outputRefs:
+                        - remote-elasticsearch
+                      labels:
+                        cluster: '{{ fromClusterClaim "name" }}'
 ---
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
