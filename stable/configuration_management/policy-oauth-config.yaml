@@ -97,7 +97,7 @@ spec:
               objectDefinition:
                 apiVersion: v1
                 data:
-                  clientSecret: OTA3M2RkYmUtN2YyMC00MWVhLWI4NzktNzg1MWZiYTQxMWUy
+                  clientSecret: dGVzdC1zZWNyZXQ=
                 kind: Secret
                 metadata:
                   name: keycloak-client-secret
