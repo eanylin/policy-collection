@@ -53,7 +53,7 @@ spec:
                           name: keycloak-client-secret
                         extraScopes: []
                         issuer: >-
-                          https://keycloak-keycloak-operator.apps.cluster-r7ft4.r7ft4.sandbox127.opentlc.com/auth/realms/ocp
+                          https://keycloak-rhsso-operator.apps.cluster-r7ft4.r7ft4.sandbox127.opentlc.com/auth/realms/ocp
                       type: OpenID
     - objectDefinition:
         apiVersion: policy.open-cluster-management.io/v1
