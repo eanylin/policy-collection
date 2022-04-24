@@ -32,7 +32,6 @@ spec:
                   name: cluster
                 spec:
                   identityProviders:
-                  identityProviders:
                     - htpasswd:
                         fileData:
                           name: htpasswd-secret
