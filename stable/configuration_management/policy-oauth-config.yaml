@@ -14,34 +14,6 @@ spec:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
         metadata:
-          name: oauth-config-htpasswd
-        spec:
-          remediationAction: enforce
-          severity: low
-          namespaceSelector:
-            exclude:
-              - kube-*
-            include:
-              - default
-          object-templates:
-            - complianceType: musthave
-              objectDefinition:
-                apiVersion: config.openshift.io/v1
-                kind: OAuth
-                metadata:
-                  name: cluster
-                spec:
-                  identityProviders:
-                    - htpasswd:
-                        fileData:
-                          name: htpasswd-secret
-                      mappingMethod: claim
-                      name: htpasswd_provider
-                      type: HTPasswd
-    - objectDefinition:
-        apiVersion: policy.open-cluster-management.io/v1
-        kind: ConfigurationPolicy
-        metadata:
           name: oauth-config-keycloak
         spec:
           remediationAction: enforce
@@ -60,6 +32,13 @@ spec:
                   name: cluster
                 spec:
                   identityProviders:
+                  identityProviders:
+                    - htpasswd:
+                        fileData:
+                          name: htpasswd-secret
+                      mappingMethod: claim
+                      name: htpasswd_provider
+                      type: HTPasswd
                     - mappingMethod: claim
                       name: keycloak
                       openID:
