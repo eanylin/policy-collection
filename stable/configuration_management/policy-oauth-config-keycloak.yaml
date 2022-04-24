@@ -44,13 +44,37 @@ spec:
                             - name
                           preferredUsername:
                             - preferred_username
-                        clientID: ocp-cluster-2
+                        clientID: '{{ fromClusterClaim "name" }}'
                         clientSecret:
                           name: keycloak-client-secret
                         extraScopes: []
                         issuer: >-
-                          https://keycloak-keycloak-operator.apps.cluster-6xlf2.6xlf2.sandbox902.opentlc.com/auth/realms/ocp
+                          https://keycloak-keycloak-operator.apps.cluster-r7ft4.r7ft4.sandbox127.opentlc.com/auth/realms/ocp
                       type: OpenID
+    - objectDefinition:
+        apiVersion: policy.open-cluster-management.io/v1
+        kind: ConfigurationPolicy
+        metadata:
+          name: oauth-config-secret
+        spec:
+          remediationAction: enforce
+          severity: low
+          namespaceSelector:
+            exclude:
+              - kube-*
+            include:
+              - default
+          object-templates:
+            - complianceType: musthave
+              objectDefinition:
+                apiVersion: v1
+                data:
+                  clientSecret: OTA3M2RkYmUtN2YyMC00MWVhLWI4NzktNzg1MWZiYTQxMWUy
+                kind: Secret
+                metadata:
+                  name: keycloak-client-secret
+                  namespace: openshift-config
+                type: Opaque
 ---
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
