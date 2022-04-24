@@ -26,6 +26,30 @@ spec:
           object-templates:
             - complianceType: musthave
               objectDefinition:
+                apiVersion: v1
+                kind: Secret
+                data:
+                  htpasswd: dXNlcjE6JDJ5JDA1JEJqaHZRRGxJQUJOMGNmTlFOTllKc3V1ZWNvWlAueDMvT3RndjQwQXJzNlVSUHd5QzF3ZTNPCg==
+                metadata:
+                  name: htpasswd-secret
+                  namespace: openshift-config
+                type: Opaque
+    - objectDefinition:
+        apiVersion: policy.open-cluster-management.io/v1
+        kind: ConfigurationPolicy
+        metadata:
+          name: oauth-config-keycloak
+        spec:
+          remediationAction: enforce
+          severity: low
+          namespaceSelector:
+            exclude:
+              - kube-*
+            include:
+              - default
+          object-templates:
+            - complianceType: musthave
+              objectDefinition:
                 apiVersion: config.openshift.io/v1
                 kind: OAuth
                 metadata:
