@@ -3,7 +3,7 @@ kind: Channel
 metadata:
   name: demo-stable-policies-chan
   annotations:
-    apps.open-cluster-management.io/reconcile-rate: medium
+    apps.open-cluster-management.io/reconcile-rate: high
 spec:
   type: GitHub
   pathname: https://github.com/stolostron/policy-collection.git
