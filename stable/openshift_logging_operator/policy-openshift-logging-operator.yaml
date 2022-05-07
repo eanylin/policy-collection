@@ -108,7 +108,7 @@ spec:
                   name: external-elasticsearch
                   namespace: openshift-logging
                 data:
-                  password: MTA1czA5V0VpcVAwbk8wN29NeUcyTEMy
+                  password: IKv0689vr3iA0167e6MsGwoL
                   username: ZWxhc3RpYw==
                 type: Opaque
     - objectDefinition:
