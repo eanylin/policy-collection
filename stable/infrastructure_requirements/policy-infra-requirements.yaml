@@ -31,8 +31,8 @@ spec:
                     server: 'https://kubernetes.default.svc'
                   project: default
                   source:
-                    path: 'ocp-multicluster/overlays/{{ fromClusterClaim "name" }}'
-                    repoURL: 'https://github.com/HengTiong/argocd-demo.git'
+                    path: 'ocp-multicluster/{{ fromClusterClaim "name" }}'
+                    repoURL: 'https://github.com/eanylin/argocd-demo.git'
                     targetRevision: HEAD
                   syncPolicy:
                     automated: {}
