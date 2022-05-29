@@ -131,7 +131,7 @@ spec:
                   outputs:
                     - name: remote-elasticsearch
                       type: elasticsearch
-                      url: 'https://elasticsearch-https-elastic-monitoring.apps.cluster-zhbj9.zhbj9.sandbox1293.opentlc.com:443'
+                      url: 'https://elasticsearch-https-elastic-monitoring.apps.cluster-wdpnd.wdpnd.sandbox389.opentlc.com:443'
                       secret:
                         name: external-elasticsearch
                   pipelines:
