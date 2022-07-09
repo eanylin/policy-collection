@@ -75,9 +75,11 @@ spec:
                         clientID: '{{ fromClusterClaim "name" }}'
                         clientSecret:
                           name: keycloak-client-secret
+                        ca:
+                          name: keycloak-ca
                         extraScopes: []
                         issuer: >-
-                          https://keycloak-rhsso-operator.apps.cluster-65kpr.65kpr.sandbox458.opentlc.com/auth/realms/ocp
+                          https://keycloak-rhsso-operator.apps.ocpcluster2.gemsdemolab.com/auth/realms/ocp
                       type: OpenID
     - objectDefinition:
         apiVersion: policy.open-cluster-management.io/v1
