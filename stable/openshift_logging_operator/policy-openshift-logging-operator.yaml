@@ -108,7 +108,7 @@ spec:
                   name: external-elasticsearch
                   namespace: openshift-logging
                 data:
-                  password: bjk1YjI0NGlRQzJHN0tyTlF4TDZqUzUz
+                  password: NE8xeElKNHAyVzFrM1B2b0VDMjJDODdx
                   username: ZWxhc3RpYw==
                 type: Opaque
     - objectDefinition:
@@ -131,7 +131,7 @@ spec:
                   outputs:
                     - name: remote-elasticsearch
                       type: elasticsearch
-                      url: 'https://elasticsearch-https-elastic-monitoring.apps.cluster-65kpr.65kpr.sandbox458.opentlc.com:443'
+                      url: 'https://elasticsearch-https-elastic-monitoring.apps.cluster-2v8lk.2v8lk.sandbox1661.opentlc.com:443'
                       secret:
                         name: external-elasticsearch
                   pipelines:
