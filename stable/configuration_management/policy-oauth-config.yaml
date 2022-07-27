@@ -29,9 +29,9 @@ spec:
                 apiVersion: v1
                 kind: Secret
                 data:
-                  htpasswd: dXNlcjE6JDJ5JDA1JEJqaHZRRGxJQUJOMGNmTlFOTllKc3V1ZWNvWlAueDMvT3RndjQwQXJzNlVSUHd5QzF3ZTNPCg==
+                  htpasswd: b2NwYWRtaW46JDJ5JDA1JDlDekpxenVITVhrdUxmRUNZa09GRnVXV2FDOWM5NEpVQjg1NHE5Q3VPTEFaN0tYZFZGZ0tPCm9jcHVzZXI6JDJ5JDA1JExVWEkwalJGb3lyOE1TYkMwYWpDb2ViSnRoMUNpWnoxSkgyWTZESm9uR3BhdUJiLjF0SFAyCg==
                 metadata:
-                  name: htpasswd-secret
+                  name: htpass-secret
                   namespace: openshift-config
                 type: Opaque
     - objectDefinition:
@@ -58,7 +58,7 @@ spec:
                   identityProviders:
                     - htpasswd:
                         fileData:
-                          name: htpasswd-secret
+                          name: htpass-secret
                       mappingMethod: claim
                       name: htpasswd_provider
                       type: HTPasswd
