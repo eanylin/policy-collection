@@ -1,22 +1,22 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
-  name: policy-kyverno-sample
+  name: policy-kyverno-require-labels
   annotations:
     policy.open-cluster-management.io/standards: NIST SP 800-53
     policy.open-cluster-management.io/categories: CM Configuration Management
     policy.open-cluster-management.io/controls: CM-2 Baseline Configuration
 spec:
-  remediationAction: inform
+  remediationAction: enforce
   disabled: false
   policy-templates:
     - objectDefinition:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
         metadata:
-          name: policy-kyverno-sample
+          name: policy-kyverno-require-lables
         spec:
-          remediationAction: inform
+          remediationAction: enforce
           severity: low
           object-templates:
             - complianceType: musthave
