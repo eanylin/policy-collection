@@ -54,7 +54,7 @@ spec:
                 metadata:
                   name: ns-must-have-gk
                 spec:
-                  enforcementAction: dryrun
+                  enforcementAction: enforce
                   match:
                     kinds:
                       - apiGroups: [""]
@@ -87,7 +87,7 @@ spec:
         metadata:
           name: policy-gatekeeper-admission
         spec:
-          remediationAction: inform # will be overridden by remediationAction in parent policy
+          remediationAction: enforce # will be overridden by remediationAction in parent policy
           severity: low
           object-templates:
             - complianceType: mustnothave
