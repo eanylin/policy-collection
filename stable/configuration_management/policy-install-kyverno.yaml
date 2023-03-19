@@ -16,7 +16,7 @@ spec:
         metadata:
           name: policy-kyverno-namespace
         spec:
-          remediationAction: inform
+          remediationAction: enforce
           severity: low
           object-templates:
             - complianceType: musthave
