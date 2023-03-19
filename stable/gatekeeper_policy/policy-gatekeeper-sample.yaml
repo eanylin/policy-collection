@@ -54,7 +54,7 @@ spec:
                 metadata:
                   name: ns-must-have-gk
                 spec:
-                  enforcementAction: enforce
+                  enforcementAction: dryrun
                   match:
                     kinds:
                       - apiGroups: [""]
