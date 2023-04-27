@@ -56,20 +56,20 @@ spec:
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
-  name: binding-policy-kyverno-name-label
+  name: binding-policy-kyverno-add-default-security-context
 placementRef:
-  name: placement-policy-kyverno-name-label
+  name: placement-policy-kyverno-add-default-security-context
   kind: PlacementRule
   apiGroup: apps.open-cluster-management.io
 subjects:
-- name: policy-kyverno-name-label
+- name: policy-kyverno-add-default-security-context
   kind: Policy
   apiGroup: policy.open-cluster-management.io
 ---
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: placement-policy-kyverno-name-label
+  name: placement-policy-kyverno-add-default-security-context
 spec:
   clusterConditions:
   - status: "True"
