@@ -40,9 +40,9 @@ spec:
                         mode: 420
                         overwrite: true
                         path: /etc/chrony.conf
-          remediationAction: enforce
+          remediationAction: inform
           severity: low
-  remediationAction: enforce
+  remediationAction: inform
 ---
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
