@@ -31,7 +31,7 @@ spec:
                     server: 'https://kubernetes.default.svc'
                   project: default
                   source:
-                    path: 'ocp-multicluster-kustomize-lab-sample-demo/{{ fromClusterClaim "name" }}'
+                    path: 'ocp-multicluster-kustomize-sample-demo/{{ fromClusterClaim "name" }}'
                     repoURL: 'https://github.com/eanylin/argocd-demo.git'
                     targetRevision: HEAD
                   syncPolicy:
