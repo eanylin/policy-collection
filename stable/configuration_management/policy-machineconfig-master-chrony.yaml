@@ -42,7 +42,7 @@ spec:
                         path: /etc/chrony.conf
           remediationAction: inform
           severity: low
-  remediationAction: enforce
+  remediationAction: inform
 ---
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
