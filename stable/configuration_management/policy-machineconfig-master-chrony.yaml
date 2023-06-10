@@ -40,7 +40,7 @@ spec:
                         mode: 420
                         overwrite: true
                         path: /etc/chrony.conf
-          remediationAction: enforce
+          remediationAction: inform
           severity: low
   remediationAction: enforce
 ---
