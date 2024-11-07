@@ -1,7 +1,7 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
-  name: "memory-limitrange"
+  name: policy-memory-limitrange
   annotations:
     policy.open-cluster-management.io/categories: SI System and Information
       Integrity, SC System and Communications Protection
@@ -14,7 +14,7 @@ spec:
         apiVersion: policy.open-cluster-management.io/v1
         kind: ConfigurationPolicy
         metadata:
-          name: policy-limitrange
+          name: policy-memory-limitrange
         spec:
           remediationAction: inform
           severity: medium
@@ -41,20 +41,20 @@ spec:
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
 metadata:
-  name: binding-policy-limitrange
+  name: binding-policy-memory-limitrange
 placementRef:
-  name: placement-policy-limitrange
+  name: placement-policy-memory-limitrange
   kind: PlacementRule
   apiGroup: apps.open-cluster-management.io
 subjects:
-- name: policy-policy-limitrange
+- name: policy-memory-limitrange
   kind: Policy
   apiGroup: policy.open-cluster-management.io
 ---
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: placement-policy-limitrange
+  name: placement-policy-memory-limitrange
 spec:
   clusterConditions:
   - status: "True"
