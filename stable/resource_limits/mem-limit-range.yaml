@@ -1,7 +1,7 @@
 apiVersion: policy.open-cluster-management.io/v1
 kind: Policy
 metadata:
-  name: ""
+  name: "memory-limitrange"
   namespace: default
   annotations:
     policy.open-cluster-management.io/categories: SI System and Information
