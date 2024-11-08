@@ -34,7 +34,7 @@ spec:
                   text: '{{ fromClusterClaim "name" }}'
                   location: BannerTop
                   color: '#fff'
-                  backgroundColor: '#FF0000'
+                  backgroundColor: '#4d5b7c'
 ---
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
